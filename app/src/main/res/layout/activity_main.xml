@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    <TextView android:text="MeterReading"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="san-serif"
+        android:id="@+id/appname"
+        android:typeface="monospace"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:textColor="@android:color/black"
+        android:textColorHighlight="@android:color/primary_text_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView android:text="@string/Childtext"
+        android:textStyle="normal"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="san-serif"
+        android:id="@+id/desctext"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/appname"
+        android:textColor="#666362"
+        android:textColorHighlight="@android:color/primary_text_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/bahriatownlogo"
+        android:layout_below="@+id/desctext"
+        android:paddingTop="7dp"
+        android:src="@drawable/bahria_logo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Your Life Style Destination"
+        android:id="@+id/slogan"
+        android:layout_below="@+id/bahriatownlogo"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:textColor="#AD8A2E" />
+
+    <Button
+        android:text="Continue"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:id="@+id/continuebutton"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:layout_below="@id/slogan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:shadowRadius="5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Version 1.1"
+        android:layout_below="@id/continuebutton"
+        android:textColor="#0000FF"
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

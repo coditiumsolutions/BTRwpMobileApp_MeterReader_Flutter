@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:gravity="center_horizontal"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="From"
+        android:inputType="number"
+        android:paddingRight="30dp"
+        android:id="@+id/from" />
+
+    <TextView
+        android:text="To"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:paddingRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/from"
+        android:id="@+id/centertext" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_toRightOf="@+id/centertext"
+        android:hint="To"
+        android:id="@+id/to" />
+
+    <Button
+        android:text="Save and Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="readingsave"
+        android:layout_marginTop="20dp"
+        android:id="@+id/save"
+        android:layout_below="@+id/from"
+        android:layout_alignRight="@+id/to"
+        android:layout_alignEnd="@+id/to" />
+</RelativeLayout>

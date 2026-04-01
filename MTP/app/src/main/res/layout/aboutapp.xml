@@ -1,0 +1,60 @@
+<GridLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:columnCount="9"
+    android:layout_margin="40dp"
+    android:orientation="horizontal"
+    android:rowCount="8"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_columnSpan="9"
+        android:layout_rowSpan="2"
+        android:id="@+id/aboutapp"
+        android:padding="0dp"
+        android:layout_margin="3dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/aboutapps"
+        android:text="Meter Reading App"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_columnSpan="9"
+        android:layout_gravity="center"
+        android:id="@+id/chidtext"
+        android:padding="0dp"
+        android:layout_margin="3dp"
+        android:layout_height="wrap_content"
+        android:text="Ver 1.1 - PK"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_columnSpan="9"
+        android:layout_gravity="center"
+        android:id="@+id/copyright"
+        android:padding="0dp"
+        android:layout_margin="3dp"
+        android:layout_height="wrap_content"
+        android:text="Copyright \u00A9 2015 BTPL"
+        android:textSize="14dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+       />
+    <TextView
+        android:layout_columnSpan="9"
+        android:id="@+id/copyright2"
+        android:padding="0dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:layout_height="wrap_content"
+        android:text="All right reserved "
+        android:textSize="14dp"
+        android:layout_centerHorizontal="true"
+       />
+</GridLayout>

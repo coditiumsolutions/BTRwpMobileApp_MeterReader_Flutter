@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgd">#f1e9d3</color>
+    <color name="actionbar_background">#ab8a39</color>
+    <color name="actionbar_text">#ffffff</color>
+    <color name="bgPopumMenu">#ab8a39</color>
+    <color name="transperent">#f1e9d3</color>
+
+
+    <color name="peakred">#ff0000</color>
+    <color name="offpeak">#0000ff</color>
+</resources>

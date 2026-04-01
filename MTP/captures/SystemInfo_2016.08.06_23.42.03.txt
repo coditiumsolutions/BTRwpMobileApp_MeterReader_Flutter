@@ -1,0 +1,189 @@
+Applications Memory Usage (kB):
+Uptime: 289402329 Realtime: 1580374654
+
+Total PSS by process:
+   104129 (  24400) kB: system (pid 2890)
+    77420 (  31812) kB: com.android.systemui (pid 3037 / activities)
+    59156 (  12404) kB: com.facebook.katana (pid 1000)
+    44303 (  31808) kB: com.google.android.gms (pid 25516)
+    42840 (   6436) kB: com.bahriatownpowerdivision.ehsan.mtp (pid 9819 / activities)
+    41328 (  12420) kB: com.google.android.gms.persistent (pid 25536)
+    40883 (  35856) kB: com.google.android.googlequicksearchbox:search (pid 7810)
+    33201 (   6672) kB: com.android.keyguard.keyguardwallpaper (pid 10181)
+    29713 (  25452) kB: com.sec.android.app.launcher (pid 3393 / activities)
+    28230 (  13568) kB: com.android.contacts (pid 22994)
+    23628 (  19900) kB: com.android.phone (pid 3378)
+    21944 (  18016) kB: com.android.chrome (pid 24732 / activities)
+    21727 (  16488) kB: com.facebook.orca (pid 1076)
+    14623 (  10164) kB: com.microsoft.skydrive (pid 762)
+    12865 (  22984) kB: com.samsung.android.sm (pid 4752)
+    12070 (  10772) kB: android.process.acore (pid 21457)
+    11902 (  31920) kB: com.android.incallui (pid 5427)
+    10097 (  29116) kB: com.sec.android.inputmethod (pid 3649)
+     9457 (  48044) kB: com.android.settings (pid 30783)
+     7290 (  18852) kB: mediaserver (pid 2285)
+     6591 (   6820) kB: android.process.media (pid 5760)
+     6282 (  10636) kB: com.sec.android.provider.logsprovider (pid 3452)
+     6028 (   6888) kB: com.google.process.gapps (pid 10076)
+     5721 (   6820) kB: com.samsung.android.MtpApplication (pid 9185)
+     5583 (   8900) kB: com.sec.spp.push (pid 21760)
+     5395 (  19756) kB: surfaceflinger (pid 2271)
+     3937 (    696) kB: gpsd (pid 3959)
+     2018 (   7172) kB: com.sec.android.daemonapp (pid 10237)
+     1955 (   3284) kB: rild (pid 2276)
+     1719 (   8620) kB: com.sec.pcw.device (pid 4351)
+     1680 (    868) kB: rild (pid 2277)
+     1659 (  23460) kB: com.android.systemui.imagewallpaper (pid 3253)
+     1640 (  12716) kB: com.facebook.katana:videoplayer (pid 28923)
+     1435 (   9668) kB: com.fmm.dm (pid 4336)
+     1374 (   7424) kB: zygote (pid 2301)
+     1147 (  44532) kB: com.android.chrome:sandboxed_process2 (pid 31422)
+     1030 (  10812) kB: com.samsung.android.themecenter:manager (pid 3049)
+      808 (  12008) kB: com.google.android.gms.feedback (pid 23086)
+      643 (    528) kB: wpa_supplicant (pid 20023)
+      616 (     72) kB: adbd (pid 2323)
+      559 kB: dumpsys (pid 10229)
+      535 (    552) kB: netd (pid 2281)
+      484 (   9428) kB: com.google.android.googlequicksearchbox:interactor (pid 11197)
+      473 (    392) kB: /init (pid 1)
+      435 (    400) kB: ueventd (pid 1506)
+      332 kB: logcat (pid 9348)
+      305 (    404) kB: keystore (pid 2289)
+      304 (     52) kB: healthd (pid 2266)
+      251 (   2360) kB: vold (pid 2269)
+      196 (    184) kB: cbd (pid 2300)
+      185 (    420) kB: smdexe (pid 2297)
+      172 (    256) kB: servicemanager (pid 2268)
+      121 (    616) kB: at_distributor (pid 2305)
+      120 (    368) kB: installd (pid 2286)
+      116 (     44) kB: argosd (pid 2290)
+      112 (    504) kB: mcDriverDaemon (pid 2270)
+       59 (    104) kB: watchdogd (pid 2240)
+       57 (    292) kB: lmkd (pid 2267)
+       32 (    404) kB: diagexe (pid 2295)
+       14 (    304) kB: dhcpcd (pid 28146)
+       12 (   1516) kB: drmserver (pid 2284)
+        8 (    448) kB: tlc_server (pid 2949)
+        8 (    444) kB: otp_server (pid 2962)
+        5 (    308) kB: ddexe (pid 2296)
+        4 (    388) kB: logd (pid 2265)
+        4 (    384) kB: drsd (pid 2278)
+        4 (    780) kB: debuggerd (pid 2282)
+        4 (    396) kB: npsmobex (pid 2283)
+        4 (    524) kB: connfwexe (pid 2298)
+        4 (    356) kB: sdp_cryptod (pid 2302)
+        4 (    252) kB: cs (pid 2334)
+        4 (    360) kB: auditd (pid 3945)
+
+Total PSS by OOM adjustment:
+    29351 kB: Native
+                7290 (  18852) kB: mediaserver (pid 2285)
+                5395 (  19756) kB: surfaceflinger (pid 2271)
+                3937 (    696) kB: gpsd (pid 3959)
+                2018 (   7172) kB: com.sec.android.daemonapp (pid 10237)
+                1955 (   3284) kB: rild (pid 2276)
+                1680 (    868) kB: rild (pid 2277)
+                1374 (   7424) kB: zygote (pid 2301)
+                 643 (    528) kB: wpa_supplicant (pid 20023)
+                 616 (     72) kB: adbd (pid 2323)
+                 559 kB: dumpsys (pid 10229)
+                 535 (    552) kB: netd (pid 2281)
+                 473 (    392) kB: /init (pid 1)
+                 435 (    400) kB: ueventd (pid 1506)
+                 332 kB: logcat (pid 9348)
+                 305 (    404) kB: keystore (pid 2289)
+                 304 (     52) kB: healthd (pid 2266)
+                 251 (   2360) kB: vold (pid 2269)
+                 196 (    184) kB: cbd (pid 2300)
+                 185 (    420) kB: smdexe (pid 2297)
+                 172 (    256) kB: servicemanager (pid 2268)
+                 121 (    616) kB: at_distributor (pid 2305)
+                 120 (    368) kB: installd (pid 2286)
+                 116 (     44) kB: argosd (pid 2290)
+                 112 (    504) kB: mcDriverDaemon (pid 2270)
+                  59 (    104) kB: watchdogd (pid 2240)
+                  57 (    292) kB: lmkd (pid 2267)
+                  32 (    404) kB: diagexe (pid 2295)
+                  14 (    304) kB: dhcpcd (pid 28146)
+                  12 (   1516) kB: drmserver (pid 2284)
+                   8 (    448) kB: tlc_server (pid 2949)
+                   8 (    444) kB: otp_server (pid 2962)
+                   5 (    308) kB: ddexe (pid 2296)
+                   4 (    388) kB: logd (pid 2265)
+                   4 (    384) kB: drsd (pid 2278)
+                   4 (    780) kB: debuggerd (pid 2282)
+                   4 (    396) kB: npsmobex (pid 2283)
+                   4 (    524) kB: connfwexe (pid 2298)
+                   4 (    356) kB: sdp_cryptod (pid 2302)
+                   4 (    252) kB: cs (pid 2334)
+                   4 (    360) kB: auditd (pid 3945)
+   104129 (  24400) kB: System
+              104129 (  24400) kB: system (pid 2890)
+   107330 (  62348) kB: Persistent
+               77420 (  31812) kB: com.android.systemui (pid 3037 / activities)
+               23628 (  19900) kB: com.android.phone (pid 3378)
+                6282 (  10636) kB: com.sec.android.provider.logsprovider (pid 3452)
+    11902 (  31920) kB: Persistent Service
+               11902 (  31920) kB: com.android.incallui (pid 5427)
+    65162 (  77464) kB: Foreground
+               42840 (   6436) kB: com.bahriatownpowerdivision.ehsan.mtp (pid 9819 / activities)
+               12865 (  22984) kB: com.samsung.android.sm (pid 4752)
+                9457 (  48044) kB: com.android.settings (pid 30783)
+    76672 (  51980) kB: Visible
+               41328 (  12420) kB: com.google.android.gms.persistent (pid 25536)
+               33201 (   6672) kB: com.android.keyguard.keyguardwallpaper (pid 10181)
+                1659 (  23460) kB: com.android.systemui.imagewallpaper (pid 3253)
+                 484 (   9428) kB: com.google.android.googlequicksearchbox:interactor (pid 11197)
+    16848 (  46748) kB: Perceptible
+               10097 (  29116) kB: com.sec.android.inputmethod (pid 3649)
+                5721 (   6820) kB: com.samsung.android.MtpApplication (pid 9185)
+                1030 (  10812) kB: com.samsung.android.themecenter:manager (pid 3049)
+    60361 (  51640) kB: A Services
+               44303 (  31808) kB: com.google.android.gms (pid 25516)
+               14623 (  10164) kB: com.microsoft.skydrive (pid 762)
+                1435 (   9668) kB: com.fmm.dm (pid 4336)
+    29713 (  25452) kB: Home
+               29713 (  25452) kB: com.sec.android.app.launcher (pid 3393 / activities)
+    96416 (  65948) kB: B Services
+               59156 (  12404) kB: com.facebook.katana (pid 1000)
+               21727 (  16488) kB: com.facebook.orca (pid 1076)
+                6591 (   6820) kB: android.process.media (pid 5760)
+                5583 (   8900) kB: com.sec.spp.push (pid 21760)
+                1719 (   8620) kB: com.sec.pcw.device (pid 4351)
+                1640 (  12716) kB: com.facebook.katana:videoplayer (pid 28923)
+   111110 ( 141640) kB: Cached
+               40883 (  35856) kB: com.google.android.googlequicksearchbox:search (pid 7810)
+               28230 (  13568) kB: com.android.contacts (pid 22994)
+               21944 (  18016) kB: com.android.chrome (pid 24732 / activities)
+               12070 (  10772) kB: android.process.acore (pid 21457)
+                6028 (   6888) kB: com.google.process.gapps (pid 10076)
+                1147 (  44532) kB: com.android.chrome:sandboxed_process2 (pid 31422)
+                 808 (  12008) kB: com.google.android.gms.feedback (pid 23086)
+
+Total PSS by category:
+   250356 kB: Dalvik
+   178257 kB: Native
+    90637 kB: GL mtrack
+    37112 kB: .dex mmap
+    36080 kB: EGL mtrack
+    32866 kB: .art mmap
+    24448 kB: .so mmap
+    18189 kB: .oat mmap
+    13039 kB: Dalvik Other
+     8739 kB: .apk mmap
+     8736 kB: Stack
+     5013 kB: Other mmap
+     4460 kB: Unknown
+      408 kB: Cursor
+      326 kB: Other dev
+      240 kB: Ashmem
+       80 kB: .ttf mmap
+        8 kB: .jar mmap
+        0 kB: Gfx dev
+        0 kB: Other mtrack
+
+Total RAM: 1405856 kB (status normal)
+ Free RAM: 329574 kB (111110 cached pss + 127552 cached kernel + 90912 free)
+ Used RAM: 934648 kB (597884 used pss + 336764 kernel)
+ Lost RAM: 141634 kB
+   Tuning: 128 (large 512), oom 122880 kB, restore limit 40960 kB (high-end-gfx)

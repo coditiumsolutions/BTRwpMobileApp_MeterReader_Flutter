@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bahriatownpowerdivision.ehsan.mtp"
+    android:versionCode="1"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:maxSdkVersion="29"
+        android:minSdkVersion="14"
+        android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="false"
+        android:configChanges="screenLayout|orientation|screenSize"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BTPL MR"
+        android:manageSpaceActivity=".MainActivity"
+        android:requestLegacyExternalStorage="true"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" >
+
+        <!-- android:configChanges="orientation|screenSize" -->
+        <activity
+            android:name="com.bahriatownpowerdivision.ehsan.mtp.MainActivity"
+            android:label="BTPL MR" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.bahriatownpowerdivision.ehsan.mtp"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.DetailActivity" />
+        <activity
+            android:name="com.bahriatownpowerdivision.ehsan.mtp.byMeter"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name="com.bahriatownpowerdivision.ehsan.mtp.bySerial"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name="com.bahriatownpowerdivision.ehsan.mtp.byrefrence"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.checkreport" />
+        <activity
+            android:name="com.bahriatownpowerdivision.ehsan.mtp.bybatch"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.newc" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.importdata" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.Exportdata" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.configuration" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.aboutapp" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.help" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.noreading" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.counter" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.checkreport2" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.checkreport3" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.developer" />
+        />
+        <activity
+            android:name="com.karumi.dexter.DexterActivity"
+            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
+    </application>
+
+</manifest>
