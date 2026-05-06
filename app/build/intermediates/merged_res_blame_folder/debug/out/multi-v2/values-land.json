@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Dotnet\\CoreCursor\\MTP-A\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "D:\\Fixing app\\BTRwpMobileApp_MeterReader_Flutter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shaid Ghauri\\.gradle\\caches\\transforms-3\\b72242e329a54edd6196bc781377c36e\\transformed\\design-26.1.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\messi\\.gradle\\caches\\transforms-3\\b72242e329a54edd6196bc781377c36e\\transformed\\design-26.1.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shaid Ghauri\\.gradle\\caches\\transforms-3\\1bfd9e846dc0fb23e449989109547c65\\transformed\\appcompat-v7-26.1.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\messi\\.gradle\\caches\\transforms-3\\1bfd9e846dc0fb23e449989109547c65\\transformed\\appcompat-v7-26.1.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

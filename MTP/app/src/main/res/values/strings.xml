@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">MTP</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_about">About App</string>
-    <string name="action_help">Help</string>
-    <string name="Title">MeterReadingApp</string>
-    <string name="Childtext">This app is for Bahria Town (Pvt) Ltd Electric Meters.</string>
-</resources>

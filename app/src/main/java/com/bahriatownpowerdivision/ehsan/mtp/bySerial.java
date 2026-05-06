@@ -26,7 +26,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -103,7 +107,48 @@ public class bySerial extends Activity {
         btnloadpics = (Button) findViewById(R.id.btnloadpics);
         btnCapture = (Button) findViewById(R.id.btnCapture);
 
+        long rowIdFromStringPage = getIntent().getLongExtra("ROW_ID", -1);
+        if (rowIdFromStringPage > -1) {
+            EditText beforeN = (EditText) findViewById(R.id.beforeN);
+            beforeN.setText(String.valueOf(rowIdFromStringPage));
+            SearchContant(null);
+        }
+
+        applyDoneActionToEditableFields(findViewById(android.R.id.content));
+
     }
+
+    private void applyDoneActionToEditableFields(View view) {
+        if (view instanceof EditText) {
+            EditText editText = (EditText) view;
+            if (editText.isEnabled()) {
+                editText.setImeOptions(EditorInfo.IME_ACTION_DONE);
+                editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        boolean isDoneAction = actionId == EditorInfo.IME_ACTION_DONE
+                                || (actionId == EditorInfo.IME_NULL && event != null
+                                && event.getKeyCode() == KeyEvent.KEYCODE_ENTER);
+                        if (isDoneAction) {
+                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            if (imm != null) {
+                                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                            }
+                            v.clearFocus();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+            }
+        } else if (view instanceof ViewGroup) {
+            ViewGroup group = (ViewGroup) view;
+            for (int i = 0; i < group.getChildCount(); i++) {
+                applyDoneActionToEditableFields(group.getChildAt(i));
+            }
+        }
+    }
+
 
     public void SearchContant(View view) {
         String catenate;
@@ -198,6 +243,7 @@ public class bySerial extends Activity {
                     btnoffpeak.setVisibility(View.VISIBLE);
 
                     imageView.setVisibility(View.VISIBLE);
+                    updatePreviewImage(Refrence);
 
                     editcameratake.setVisibility(View.GONE);
                     Button btnPre = (Button) findViewById(R.id.btnPrev);
@@ -526,17 +572,7 @@ public class bySerial extends Activity {
                 imageView.setImageBitmap(BitmapFactory.decodeFile(folderpath1));
             }
         }
-        /*
-        String dir = Environment.getExternalStorageDirectory() + File.separator + "MeterReadingApp" + File.separator + "DecodedImages";
-        File folder = new File(dir);
-        File folderpath = new File(folder + File.separator + imagename);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        if (folderpath.exists()) {
-            String folderpath1 = folderpath.getAbsolutePath().toString().trim();
-            imageView.setImageBitmap(BitmapFactory.decodeFile(folderpath1));
-        }
-
-         */
+        updatePreviewImage(ref);
     }
 
     public void moveNexts(View view) {
@@ -685,17 +721,7 @@ public class bySerial extends Activity {
         editcurrentload.setVisibility(View.VISIBLE);
         editcurrentload.setText(currentloadValue);
 
-        String imagename = ref + ".jpg";
-        String dir = Environment.getExternalStorageDirectory() + File.separator + "MeterReadingApp" + File.separator + "DecodedImages";
-        File folder = new File(dir);
-        File folderpath = new File(folder + File.separator + imagename);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        if (folderpath.exists()) {
-            String folderpath1 = folderpath.getAbsolutePath().toString().trim();
-            imageView.setImageBitmap(BitmapFactory.decodeFile(folderpath1));
-        } else {
-            imageView.setImageResource(android.R.color.transparent);
-        }
+        updatePreviewImage(ref);
     }
 
     public void movePrevs(View view) {
@@ -1170,6 +1196,12 @@ public class bySerial extends Activity {
 
                 }
             }
+        }
+    }
+
+    private void updatePreviewImage(String ref) {
+        if (imageView != null) {
+            imageView.setVisibility(View.GONE);
         }
     }
 

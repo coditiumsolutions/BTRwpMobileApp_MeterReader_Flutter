@@ -832,6 +832,7 @@ id btnNext
 id btnNexts
 id btnPrev
 id btnSave
+id btnSearchString
 id btnloadpics
 id btnoffpeak
 id btnpeak
@@ -888,18 +889,16 @@ id editprevious
 id editref
 id editstreet
 id edittariff
-id email
 id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etSearch
 id exitUntilCollapsed
 id exiticon
 id expand_activities_button
 id expanded_menu
-id experties
 id exportdata
-id exprlist
 id fill
 id fill_horizontal
 id fill_vertical
@@ -926,6 +925,7 @@ id listMode
 id list_item
 id lk
 id login
+id lvRecords
 id masked
 id media_actions
 id message
@@ -951,7 +951,6 @@ id parent_matrix
 id pd
 id phone
 id phonenumber
-id phonenumbers
 id pin
 id present
 id presentreading
@@ -960,8 +959,6 @@ id previousload
 id previousoffpeak
 id previouspeak
 id previousreading
-id profession
-id proflist
 id progress_circular
 id progress_horizontal
 id radio
@@ -1016,6 +1013,7 @@ id smallLabel
 id snackbar_action
 id snackbar_text
 id snap
+id spSearchField
 id spacer
 id split_action_bar
 id src_atop
@@ -1055,6 +1053,12 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvMeter
+id tvPlot
+id tvRecordCount
+id tvRef
+id tvSr
+id tvStreet
 id uniform
 id up
 id useLogo
@@ -1111,6 +1115,7 @@ layout activity_main
 layout bymeternum
 layout bynewrefrence
 layout byserialnumber
+layout bystring
 layout checkreport
 layout checkreport2
 layout completebilling
@@ -1134,6 +1139,7 @@ layout developer
 layout exportdata
 layout help
 layout importdatabase
+layout item_bystring_row
 layout newconnection
 layout notification_action
 layout notification_action_tombstone

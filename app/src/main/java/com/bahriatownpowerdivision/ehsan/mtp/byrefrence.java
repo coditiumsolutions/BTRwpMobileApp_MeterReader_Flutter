@@ -25,7 +25,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
 import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,6 +43,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.NetworkInterface;
 import java.text.SimpleDateFormat;
@@ -106,7 +111,40 @@ public class byrefrence extends Activity {
 
 //       '' btnpeak.setOnClickListener(this);
 //        'btnoffpeak.setOnClickListener(this);
+        applyDoneActionToEditableFields(findViewById(android.R.id.content));
     }
+
+    private void applyDoneActionToEditableFields(View view) {
+        if (view instanceof EditText) {
+            EditText editText = (EditText) view;
+            if (editText.isEnabled()) {
+                editText.setImeOptions(EditorInfo.IME_ACTION_DONE);
+                editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        boolean isDoneAction = actionId == EditorInfo.IME_ACTION_DONE
+                                || (actionId == EditorInfo.IME_NULL && event != null
+                                && event.getKeyCode() == KeyEvent.KEYCODE_ENTER);
+                        if (isDoneAction) {
+                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            if (imm != null) {
+                                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                            }
+                            v.clearFocus();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+            }
+        } else if (view instanceof ViewGroup) {
+            ViewGroup group = (ViewGroup) view;
+            for (int i = 0; i < group.getChildCount(); i++) {
+                applyDoneActionToEditableFields(group.getChildAt(i));
+            }
+        }
+    }
+
 
     private Uri overrideFileIfFOund(String imagename, Uri imageUri, Boolean isDecoded) {
         Uri contentUri = MediaStore.Files.getContentUri("external");
@@ -222,6 +260,7 @@ public class byrefrence extends Activity {
                     edittariff.setText(tariff);
 
                     imageView.setVisibility(View.VISIBLE);
+                    updatePreviewImage(Refrence);
 
                     editcameratake.setVisibility(View.GONE);
                     Button btnPre = (Button) findViewById(R.id.btnPrev);
@@ -549,6 +588,8 @@ public class byrefrence extends Activity {
 
          */
 
+        updatePreviewImage(ref);
+
     }
 
     public void moveNexts(View view) {
@@ -694,18 +735,14 @@ public class byrefrence extends Activity {
         editcurrentload.setVisibility(View.VISIBLE);
         editcurrentload.setText(currentloadValue);
 
-        String imagename = ref + ".jpg";
-        String dir = Environment.getExternalStorageDirectory() + File.separator + "MeterReadingApp" + File.separator + "DecodedImages";
-        File folder = new File(dir);
-        File folderpath = new File(folder + File.separator + imagename);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        if (folderpath.exists()) {
-            String folderpath1 = folderpath.getAbsolutePath().toString().trim();
-            imageView.setImageBitmap(BitmapFactory.decodeFile(folderpath1));
-        } else {
-            imageView.setImageResource(android.R.color.transparent);
-        }
+        updatePreviewImage(ref);
 
+    }
+
+    private void updatePreviewImage(String ref) {
+        if (imageView != null) {
+            imageView.setVisibility(View.GONE);
+        }
     }
 
     public void movePrevs(View view) {

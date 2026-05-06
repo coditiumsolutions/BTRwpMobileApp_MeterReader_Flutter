@@ -5,8 +5,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Environment;
 import android.net.Uri;
 import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -26,6 +30,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
@@ -52,27 +57,45 @@ public class MainActivity extends AppCompatActivity{
     }
     private void permission()
     {
+        List<String> permissions = new ArrayList<>();
+        permissions.add(Manifest.permission.CAMERA);
+        permissions.add(Manifest.permission.CALL_PHONE);
+        permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        permissions.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permissions.add(Manifest.permission.READ_MEDIA_IMAGES);
+            permissions.add(Manifest.permission.READ_MEDIA_VIDEO);
+        } else {
+            permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+            permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
 
         Dexter.withActivity(this)
-                .withPermissions(
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.ACCESS_WIFI_STATE,
-                        Manifest.permission.CALL_PHONE,
-                        Manifest.permission.ACCESS_FINE_LOCATION)
+                .withPermissions(permissions)
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        // check if all permissions are granted
-                        if (report.areAllPermissionsGranted()) {
-//                           Toast.makeText(getApplicationContext(), "All permissions are granted!", Toast.LENGTH_SHORT).show();
-                         gotosecondactivity();
+                        // Allow app launch when core permissions are granted.
+                        if (hasCorePermissions()) {
+                            gotosecondactivity();
+                            return;
                         }
-                        // check for permanent denial of any permission
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
+                            openAllFilesAccessSettings();
+                            return;
+                        }
+
+                        // Show settings only when denied state blocks core flow.
                         if (report.isAnyPermissionPermanentlyDenied()) {
-                            // show alert dialog navigating to Settings
                             showSettingsDialog();
+                        } else {
+                            Toast.makeText(
+                                    getApplicationContext(),
+                                    "Please allow Camera and Storage/Photos permissions.",
+                                    Toast.LENGTH_SHORT
+                            ).show();
                         }
                     }
                     @Override
@@ -89,6 +112,40 @@ public class MainActivity extends AppCompatActivity{
                 .onSameThread()
                 .check();
 //       '' return false;
+    }
+
+    private boolean hasCorePermissions() {
+        boolean cameraGranted = ContextCompat.checkSelfPermission(
+                this, Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED;
+
+        if (!cameraGranted) {
+            return false;
+        }
+
+        boolean allFilesGranted = Build.VERSION.SDK_INT < Build.VERSION_CODES.R || Environment.isExternalStorageManager();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            boolean mediaGranted = ContextCompat.checkSelfPermission(
+                    this, Manifest.permission.READ_MEDIA_IMAGES
+            ) == PackageManager.PERMISSION_GRANTED;
+            return mediaGranted || allFilesGranted;
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            boolean readGranted = ContextCompat.checkSelfPermission(
+                    this, Manifest.permission.READ_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED;
+            return readGranted || allFilesGranted;
+        }
+
+        boolean readGranted = ContextCompat.checkSelfPermission(
+                this, Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED;
+        boolean writeGranted = ContextCompat.checkSelfPermission(
+                this, Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED;
+        return readGranted && writeGranted;
     }
 
     private void showSettingsDialog() {
@@ -168,6 +225,17 @@ public class MainActivity extends AppCompatActivity{
         Uri uri = Uri.fromParts("package", getPackageName(), null);
         intent.setData(uri);
         startActivityForResult(intent, 101);
+    }
+
+    private void openAllFilesAccessSettings() {
+        Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+        intent.setData(Uri.parse("package:" + getPackageName()));
+        try {
+            startActivity(intent);
+        } catch (Exception e) {
+            Intent fallbackIntent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            startActivity(fallbackIntent);
+        }
     }
 
 }

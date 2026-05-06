@@ -7,7 +7,7 @@
     <uses-sdk
         android:maxSdkVersion="29"
         android:minSdkVersion="14"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="33" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -40,6 +40,7 @@
         <!-- android:configChanges="orientation|screenSize" -->
         <activity
             android:name="com.bahriatownpowerdivision.ehsan.mtp.MainActivity"
+            android:exported="true"
             android:label="BTPL MR" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,6 +73,7 @@
         <activity
             android:name="com.bahriatownpowerdivision.ehsan.mtp.bybatch"
             android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.bystring" />
         <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.newc" />
         <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.importdata" />
         <activity android:name="com.bahriatownpowerdivision.ehsan.mtp.Exportdata" />

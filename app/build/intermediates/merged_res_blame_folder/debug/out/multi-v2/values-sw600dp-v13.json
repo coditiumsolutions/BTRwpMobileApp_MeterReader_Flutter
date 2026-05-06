@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Dotnet\\CoreCursor\\MTP-A\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "D:\\Fixing app\\BTRwpMobileApp_MeterReader_Flutter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shaid Ghauri\\.gradle\\caches\\transforms-3\\b72242e329a54edd6196bc781377c36e\\transformed\\design-26.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\messi\\.gradle\\caches\\transforms-3\\b72242e329a54edd6196bc781377c36e\\transformed\\design-26.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,24 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shaid Ghauri\\.gradle\\caches\\transforms-3\\1bfd9e846dc0fb23e449989109547c65\\transformed\\appcompat-v7-26.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,124,193,263,337,413,472,543",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "119,188,258,332,408,467,538,606"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "98,167,236,306,380,456,515,586",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "162,231,301,375,451,510,581,649"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Shaid Ghauri\\.gradle\\caches\\transforms-3\\8fadc49fdafad7fe4793d267a69ad79b\\transformed\\snackbar-2.11.0\\res\\values-sw600dp-v13\\values.xml",
+                    "source": "C:\\Users\\messi\\.gradle\\caches\\transforms-3\\8fadc49fdafad7fe4793d267a69ad79b\\transformed\\snackbar-2.11.0\\res\\values-sw600dp-v13\\values.xml",
                     "from": {
                         "startLines": "4,7,8,9",
                         "startColumns": "4,4,4,4",
@@ -54,6 +37,23 @@
                         "startOffsets": "55,1213,1264,1310",
                         "endColumns": "42,50,45,45",
                         "endOffsets": "93,1259,1305,1351"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\messi\\.gradle\\caches\\transforms-3\\1bfd9e846dc0fb23e449989109547c65\\transformed\\appcompat-v7-26.1.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "98,167,236,306,380,456,515,586",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "162,231,301,375,451,510,581,649"
                     }
                 }
             ]

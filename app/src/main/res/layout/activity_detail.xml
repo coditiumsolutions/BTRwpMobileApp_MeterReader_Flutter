@@ -55,6 +55,14 @@
             android:text="By Sr" />
 
         <Button
+            android:id="@+id/importdata"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:onClick="showZaire"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/invoice"
+            android:text="By String" />
+        <Button
             android:id="@+id/exportdata"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -62,14 +70,6 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/export"
             android:text="Export" />
-        <Button
-            android:id="@+id/importdata"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:onClick="showZaire"
-            android:background="@android:color/transparent"
-            android:drawableTop="@drawable/importdb"
-            android:text="Import" />
 
     </TableRow>
 

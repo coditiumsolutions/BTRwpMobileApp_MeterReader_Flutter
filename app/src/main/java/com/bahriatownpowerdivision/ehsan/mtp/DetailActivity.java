@@ -68,6 +68,11 @@ public class DetailActivity extends AppCompatActivity {
             Intent intent5 = new Intent(this,importdata.class);
             startActivity(intent5);
         }
+        else if(button_test.equals("By String"))
+        {
+            Intent intentString = new Intent(this,bystring.class);
+            startActivity(intentString);
+        }
         else if(button_test.equals("Verify #1"))
         {
             Intent intent4 = new Intent(this,checkreport.class);

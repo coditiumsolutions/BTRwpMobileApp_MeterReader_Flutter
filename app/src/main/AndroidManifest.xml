@@ -27,6 +27,7 @@
        <!-- android:configChanges="orientation|screenSize" -->
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:label="BTPL MR" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,6 +62,7 @@
         <activity android:name=".bybatch"
             android:configChanges="orientation|screenSize|keyboardHidden"
             />
+        <activity android:name=".bystring" />
         <activity android:name=".newc"></activity>
         <activity android:name=".importdata"/>
         <activity android:name=".Exportdata"/>
